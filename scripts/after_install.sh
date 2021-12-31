@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/homemadearcade/
+cd /home/homemadearcade
 
-npm install
+sudo npm install
