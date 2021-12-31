@@ -8,8 +8,7 @@ export default class BootScene extends Scene {
     fetch('/port').then((res) => {
       return res.json()
     }).then((data) => {
-      console.log(data)
-      const channel = geckos({ port: data.port })
+      const channel = geckos({ port: Number(data.port) })
       channel.onConnect(error => {
         if (error) console.error(error.message)
         channel.on('ready', () => {
