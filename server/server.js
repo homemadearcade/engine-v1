@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'))
 })
 
+app.get('/port', (req, res) => {
+  res.json({port: process.env.PORT || port })
+})
+
 app.get('/getState', (req, res) => {
   try {
     let gameScene = game.scene.keys['GameScene']

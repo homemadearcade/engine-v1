@@ -5,13 +5,15 @@ export default class BootScene extends Scene {
   constructor() {
     super({ key: 'BootScene' })
 
-    const channel = geckos({ port: 1444 })
-
-    channel.onConnect(error => {
-      if (error) console.error(error.message)
-
-      channel.on('ready', () => {
-        this.scene.start('GameScene', { channel: channel })
+    fetch('/port').then((res) => {
+      return res.json()
+    }).then((data) => {
+      const channel = geckos({ port: data.port })
+      channel.onConnect(error => {
+        if (error) console.error(error.message)
+        channel.on('ready', () => {
+          this.scene.start('GameScene', { channel: channel })
+        })
       })
     })
   }

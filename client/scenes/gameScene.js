@@ -64,6 +64,7 @@ export default class GameScene extends Scene {
     }
 
     const updatesHandler = updates => {
+      console.log(updates)
       updates.forEach(gameObject => {
         const { playerId, x, y, dead } = gameObject
         const alpha = dead ? 0 : 1
