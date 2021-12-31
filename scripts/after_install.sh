@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/homemadearcade/engine-v1
+cd /home/homemadearcade/
 
 npm install
