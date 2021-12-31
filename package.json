@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "engines": {
-    "node": "^14.15 || >=16"
+    "node": "^14.15"
   },
   "scripts": {
     "start": "npm run dev",
